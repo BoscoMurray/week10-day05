@@ -30,12 +30,18 @@ Hero.prototype.sortTasksHard = function() {
 
 Hero.prototype.sortTasksMostUrgent = function() {
   return this.tasks.sort( function(a, b) {
-    return a.urgency - b.urgency;
+    return b.urgency - a.urgency;
   });
 };
 
 Hero.prototype.sortTasksLeastUrgent = function() {
-  return this.sortTasksEasy().reverse();
+  return this.sortTasksMostUrgent().reverse();
 };
+
+// Hero.prototype.sortTasksMostUrgent = function() {
+//   return this.tasks.sort( function(a, b) {
+//     return a.urgency - b.urgency;
+//   });
+// };
 
 module.exports = Hero;

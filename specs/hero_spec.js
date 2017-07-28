@@ -74,7 +74,7 @@ describe("Hero", function () {
     hero.addTask(unblockSink);
     hero.addTask(returnLostDucksToPond);
     hero.sortTasksMostUrgent();
-    assert.strictEqual(hero.tasks[0], unblockSink);
+    assert.strictEqual(hero.tasks[0], saveCatFromTree);
   });
 
   it("should sort tasks by urgency, least urgent", function() {
@@ -82,7 +82,15 @@ describe("Hero", function () {
     hero.addTask(unblockSink);
     hero.addTask(returnLostDucksToPond);
     hero.sortTasksLeastUrgent();
-    assert.strictEqual(hero.tasks[0], saveCatFromTree);
+    assert.strictEqual(hero.tasks[0], unblockSink);
   });
+
+  // it("should sort tasks by reward", function() {
+  //   hero.addTask(saveCatFromTree);
+  //   hero.addTask(unblockSink);
+  //   hero.addTask(returnLostDucksToPond);
+  //   hero.sortTasksByReward();
+  //   assert.strictEqual(hero.tasks[0], banana);
+  // });
 
 })

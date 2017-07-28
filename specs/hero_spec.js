@@ -85,12 +85,12 @@ describe("Hero", function () {
     assert.strictEqual(hero.tasks[0], unblockSink);
   });
 
-  // it("should sort tasks by reward", function() {
-  //   hero.addTask(saveCatFromTree);
-  //   hero.addTask(unblockSink);
-  //   hero.addTask(returnLostDucksToPond);
-  //   hero.sortTasksByReward();
-  //   assert.strictEqual(hero.tasks[0], banana);
-  // });
+  it("should sort tasks by reward", function() {
+    hero.addTask(saveCatFromTree);
+    hero.addTask(unblockSink);
+    hero.addTask(returnLostDucksToPond);
+    hero.sortTasksByReward();
+    assert.strictEqual(hero.tasks[0], saveCatFromTree);
+  });
 
 })

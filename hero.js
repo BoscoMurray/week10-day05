@@ -52,4 +52,10 @@ Hero.prototype.sortTasksByReward = function() {
   });
 };
 
+Hero.prototype.completed = function() {
+  return this.tasks.filter( function( task ) {
+    return task.complete === true;
+  });
+};
+
 module.exports = Hero;

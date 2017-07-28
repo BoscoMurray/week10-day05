@@ -53,8 +53,12 @@ describe("Hero", function () {
     assert.strictEqual(hero.health, 130);
   });
 
-  // it("should sort tasks by difficulty", function() {
-  //   assert.strictEqual(hero.tasks[-1])
-  // })
+  it("should sort tasks by difficulty, easy first", function() {
+    hero.addTask(saveCatFromTree);
+    hero.addTask(unblockSink);
+    hero.addTask(returnLostDucksToPond);
+    hero.sortTasksEasy();
+    assert.strictEqual(hero.tasks[0], unblockSink);
+  });
 
 })

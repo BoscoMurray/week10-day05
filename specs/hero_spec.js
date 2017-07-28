@@ -6,11 +6,11 @@ describe("Hero", function () {
   var hero;
 
   beforeEach( function() {
-    hero = new Hero("Banana Man", 10, "Banana");
+    hero = new Hero("Bananaman", 10, "Banana");
   });
 
   it("should have a name", function() {
-    assert.strictEqual(hero.name, "Banana Man");
+    assert.strictEqual(hero.name, "Bananaman");
   });
 
   it("should have health", function() {
@@ -22,7 +22,7 @@ describe("Hero", function () {
   });
 
   it("should talk, saying name", function() {
-    assert.strictEqual(hero.sayName(), "My name is Banana Man")
+    assert.strictEqual(hero.sayName(), "My name is Bananaman")
   });
 
   it("should start with empty collection of tasks", function() {

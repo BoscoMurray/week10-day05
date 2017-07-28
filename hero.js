@@ -28,4 +28,14 @@ Hero.prototype.sortTasksHard = function() {
   return this.sortTasksEasy().reverse();
 };
 
+Hero.prototype.sortTasksMostUrgent = function() {
+  return this.tasks.sort( function(a, b) {
+    return a.urgency - b.urgency;
+  });
+};
+
+Hero.prototype.sortTasksLeastUrgent = function() {
+  return this.sortTasksEasy().reverse();
+};
+
 module.exports = Hero;

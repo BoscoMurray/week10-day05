@@ -1,15 +1,26 @@
 var assert = require("assert");
 var Hero = require("../hero");
 var Food = require("../food");
+var Task = require("../task");
+
 
 describe("Hero", function () {
 
   var hero;
   var banana;
+  var twix;
+  var xlBaconDoubleCheese;
+  var saveCatFromTree;
+  var unblockSink;
 
   beforeEach( function() {
     banana = new Food("Banana", 20);
+    twix = new Food("Twix", 5);
+    xlBaconDoubleCheese = new Food("XL Bacon Double Cheeseburger", 3);
     hero = new Hero("Bananaman", 100, banana);
+    saveCatFromTree = new Task(10, 10, banana);
+    unblockSink = new Task(5, 3, twix);
+    returnLostDucksToPond = new Task(8, 6, xlBaconDoubleCheese);
   });
 
   it("should have a name", function() {
@@ -32,9 +43,18 @@ describe("Hero", function () {
     assert.strictEqual(hero.tasks.length, 0)
   });
 
+  it("should be able to add task", function() {
+    hero.addTask(saveCatFromTree);
+    assert.strictEqual(hero.tasks.length, 1);
+  });
+
   it("should eat food, health increases", function() {
     hero.eatFood(banana);
     assert.strictEqual(hero.health, 130);
-  })
+  });
+
+  // it("should sort tasks by difficulty", function() {
+  //   assert.strictEqual(hero.tasks[-1])
+  // })
 
 })

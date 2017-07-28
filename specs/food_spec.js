@@ -17,4 +17,9 @@ describe("Food", function () {
     assert.strictEqual(food.repValue, 20);
   });
 
+  it("should be able to set poisoned", function() {
+    food.poison();
+    assert.strictEqual(food.poisoned, true)
+  })
+
 })

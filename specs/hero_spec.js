@@ -93,7 +93,7 @@ describe("Hero", function () {
     assert.strictEqual(hero.tasks[0], saveCatFromTree);
   });
 
-  it("should sort tasks by reward", function() {
+  it("should return completed tasks", function() {
     hero.addTask(saveCatFromTree);
     hero.addTask(unblockSink);
     hero.addTask(returnLostDucksToPond);
@@ -101,6 +101,12 @@ describe("Hero", function () {
     assert.strictEqual(hero.completed().length, 1);
   });
 
-  
+  it("should return incomplete tasks", function() {
+    hero.addTask(saveCatFromTree);
+    hero.addTask(unblockSink);
+    hero.addTask(returnLostDucksToPond);
+    hero.tasks[1].markComplete();
+    assert.strictEqual(hero.incomplete().length, 2);
+  });
 
 })

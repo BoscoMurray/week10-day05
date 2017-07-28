@@ -58,4 +58,10 @@ Hero.prototype.completed = function() {
   });
 };
 
+Hero.prototype.incomplete = function() {
+  return this.tasks.filter( function( task ) {
+    return task.complete === false;
+  });
+};
+
 module.exports = Hero;

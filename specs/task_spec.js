@@ -25,4 +25,10 @@ describe("Task", function () {
     assert.strictEqual(task.complete, false);
   });
 
+  it("should be able to complete task", function() {
+    task.complete = true;
+    assert.strictEqual(task.complete, true);
+  });
+  
+
 })

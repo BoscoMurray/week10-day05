@@ -13,6 +13,16 @@ describe("Hero", function () {
     assert.strictEqual(hero.name, "Banana Man");
   });
 
-  
-  
+  it("should have health", function() {
+    assert.strictEqual(hero.health, 10);
+  });
+
+  it("should have faveFood", function() {
+    assert.strictEqual(hero.faveFood, "Banana");
+  });
+
+  it("should talk, saying name", function() {
+    assert.strictEqual(hero.sayName(), "My name is Banana Man")
+  })
+
 })

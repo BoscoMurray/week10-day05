@@ -23,6 +23,10 @@ describe("Hero", function () {
 
   it("should talk, saying name", function() {
     assert.strictEqual(hero.sayName(), "My name is Banana Man")
-  })
+  });
+
+  it("should start with empty collection of tasks", function() {
+    assert.strictEqual(hero.tasks.length, 0)
+  });
 
 })

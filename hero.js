@@ -11,23 +11,21 @@ Hero.prototype.sayName = function() {
 };
 
 Hero.prototype.eatFood = function( food ) {
-  this.health += food === this.faveFood ? food.repValue * 1.5 : food.repValue;
+  return this.health += food === this.faveFood ? food.repValue * 1.5 : food.repValue;
 };
 
 Hero.prototype.addTask = function( task ) {
-  this.tasks.push( task );
+  return this.tasks.push( task );
 };
 
 Hero.prototype.sortTasksEasy = function() {
-  this.tasks.sort( function(a, b) {
+  return this.tasks.sort( function(a, b) {
     return a.difficulty - b.difficulty;
   });
 };
 
 Hero.prototype.sortTasksHard = function() {
-  this.tasks.sort( function(a, b) {
-    return b.difficulty - a.difficulty;
-  });
+  return this.sortTasksEasy().reverse();
 };
 
 module.exports = Hero;

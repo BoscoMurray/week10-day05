@@ -5,6 +5,8 @@ var Task = function(difficulty, urgency, reward) {
   this.complete = false;
 }
 
-
+Task.prototype.markComplete = function() {
+  this.complete = true;
+};
 
 module.exports = Task;

@@ -26,7 +26,7 @@ describe("Task", function () {
   });
 
   it("should be able to complete task", function() {
-    task.complete = true;
+    task.markComplete();
     assert.strictEqual(task.complete, true);
   });
   

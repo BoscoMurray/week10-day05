@@ -21,6 +21,8 @@ describe("Task", function () {
     assert.strictEqual(task.reward, "Banana");
   });
 
-
+  it("should start not completed", function() {
+    assert.strictEqual(task.complete, false);
+  });
 
 })

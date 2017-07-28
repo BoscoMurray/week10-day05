@@ -61,4 +61,12 @@ describe("Hero", function () {
     assert.strictEqual(hero.tasks[0], unblockSink);
   });
 
+  it("should sort tasks by difficulty, hard first", function() {
+    hero.addTask(saveCatFromTree);
+    hero.addTask(unblockSink);
+    hero.addTask(returnLostDucksToPond);
+    hero.sortTasksHard();
+    assert.strictEqual(hero.tasks[0], saveCatFromTree);
+  });
+
 })

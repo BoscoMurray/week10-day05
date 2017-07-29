@@ -130,6 +130,6 @@ describe("Hero", function () {
     hero.addTask(clearLeavesFromGutter);
     hero.taskDone(clearLeavesFromGutter);
     assert.strictEqual(hero.health, 94);
-  })
+  });
 
 })

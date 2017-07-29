@@ -11,7 +11,11 @@ Hero.prototype.sayName = function() {
 };
 
 Hero.prototype.eatFood = function( food ) {
-  return this.health += food === this.faveFood ? food.repValue * 1.5 : food.repValue;
+  if (food.poisoned === false) {
+    return this.health += food === this.faveFood ? food.repValue * 1.5 : food.repValue;
+  } else {
+    return this.health -= food.repValue * 2;
+  };
 };
 
 Hero.prototype.addTask = function( task ) {

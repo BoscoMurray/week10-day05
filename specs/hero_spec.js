@@ -2,6 +2,7 @@ var assert = require("assert");
 var Hero = require("../hero");
 var Food = require("../food");
 var Task = require("../task");
+var Rat = require("../rat");
 
 
 describe("Hero", function () {
@@ -12,6 +13,7 @@ describe("Hero", function () {
   var xlBaconDoubleCheese;
   var saveCatFromTree;
   var unblockSink;
+  var rat;
 
   beforeEach( function() {
     banana = new Food("Banana", 20);
@@ -21,6 +23,7 @@ describe("Hero", function () {
     saveCatFromTree = new Task(10, 10, banana);
     unblockSink = new Task(5, 3, twix);
     returnLostDucksToPond = new Task(8, 6, xlBaconDoubleCheese);
+    rat = new Rat("Splinter");
   });
 
   it("should have a name", function() {
@@ -107,6 +110,15 @@ describe("Hero", function () {
     hero.addTask(returnLostDucksToPond);
     hero.tasks[1].markComplete();
     assert.strictEqual(hero.incomplete().length, 2);
+  });
+
+  it("should lose health when eating poisoned food", function() {
+    rat.touchFood(xlBaconDoubleCheese);
+    hero.eatFood(xlBaconDoubleCheese);
+    // var clearLeavesFromGutter = new Task(2, 2, xlBaconDoubleCheese);
+    // hero.addTask(clearLeavesFromGutter);
+    // hero.tasks[0].markComplete();
+    assert.strictEqual(hero.health, 94);
   });
 
 })

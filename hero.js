@@ -3,7 +3,6 @@ var Hero = function(name, health, faveFood) {
   this.health = health;
   this.faveFood = faveFood;
   this.tasks = [];
-  // this.completedTasks = [];
 }
 
 Hero.prototype.sayName = function() {
@@ -66,6 +65,15 @@ Hero.prototype.incomplete = function() {
   return this.tasks.filter( function( task ) {
     return task.complete === false;
   });
+};
+
+Hero.prototype.taskDone = function( taskToCheck ) {
+  this.tasks.forEach(function( task ) {
+    if (taskToCheck === task) {
+      task.markComplete();
+      this.eatFood(task.reward);
+    }
+  }.bind( this ));
 };
 
 module.exports = Hero;

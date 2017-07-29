@@ -115,10 +115,21 @@ describe("Hero", function () {
   it("should lose health when eating poisoned food", function() {
     rat.touchFood(xlBaconDoubleCheese);
     hero.eatFood(xlBaconDoubleCheese);
-    // var clearLeavesFromGutter = new Task(2, 2, xlBaconDoubleCheese);
-    // hero.addTask(clearLeavesFromGutter);
-    // hero.tasks[0].markComplete();
     assert.strictEqual(hero.health, 94);
   });
+
+  it("should mark tasks as complete", function() { 
+    hero.addTask(returnLostDucksToPond);
+    hero.taskDone(returnLostDucksToPond);
+    assert.strictEqual(hero.completed().length, 1);
+  });
+
+  it("should eat food reward when complete task", function() {
+    rat.touchFood(xlBaconDoubleCheese);
+    var clearLeavesFromGutter = new Task(2, 2, xlBaconDoubleCheese);
+    hero.addTask(clearLeavesFromGutter);
+    hero.taskDone(clearLeavesFromGutter);
+    assert.strictEqual(hero.health, 94);
+  })
 
 })

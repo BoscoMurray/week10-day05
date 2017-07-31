@@ -10,7 +10,7 @@ Hero.prototype.sayName = function() {
 };
 
 Hero.prototype.eatFood = function( food ) {
-  if (food.poisoned === false) {
+  if (!food.poisoned) {
     return this.health += food === this.faveFood ? food.repValue * 1.5 : food.repValue;
   } else {
     return this.health -= food.repValue * 2;
@@ -57,13 +57,13 @@ Hero.prototype.sortTasksByReward = function() {
 
 Hero.prototype.completed = function() {
   return this.tasks.filter( function( task ) {
-    return task.complete === true;
+    return task.complete;
   });
 };
 
 Hero.prototype.incomplete = function() {
   return this.tasks.filter( function( task ) {
-    return task.complete === false;
+    return !task.complete;
   });
 };
 
